@@ -1,0 +1,154 @@
+/* Global Styles for the Container */
+.loan-checker-container {
+    /* Center the container horizontally and vertically */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    /* Set the container to occupy full viewport height */
+    min-height: 100vh;
+  
+    /* Background color */
+    background-color: #e6f7ff; /* Light Blue */
+  
+    /* Padding and margin */
+    padding: 20px;
+    margin: 0 auto;
+  
+    /* Box shadow for subtle depth */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  
+    /* Border radius for rounded corners */
+    border-radius: 8px;
+  
+    /* Maximum width to prevent stretching on large screens */
+    max-width: 500px;
+  }
+  
+  /* Heading Styles */
+  .loan-checker-container h2 {
+    color: #1890ff; /* A shade of blue */
+    margin-bottom: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Form Styles */
+  .loan-checker-container form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Form Group Styles */
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  
+  /* Label Styles */
+  .form-group label {
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Input and Select Styles */
+  .form-group input,
+  .form-group select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: border-color 0.3s ease;
+  }
+  
+  /* Focus State for Inputs and Selects */
+  .form-group input:focus,
+  .form-group select:focus {
+    border-color: #40a9ff; /* Lighter blue on focus */
+    outline: none;
+  }
+  
+  /* Error Message Styles */
+  .form-group small {
+    color: #ff4d4f; /* Red for errors */
+    margin-top: 5px;
+    font-size: 0.875rem;
+  }
+  
+  /* Submit Button Styles */
+  .loan-checker-container button {
+    padding: 12px;
+    background-color: #40a9ff; /* Blue */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Disabled Submit Button */
+  .loan-checker-container button:disabled {
+    background-color: #91d5ff; /* Lighter blue */
+    cursor: not-allowed;
+  }
+  
+  /* Hover Effect for Submit Button */
+  .loan-checker-container button:hover:not(:disabled) {
+    background-color: #096dd9; /* Darker blue on hover */
+  }
+  
+  /* Error Message Outside the Form */
+  .error-message {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ff4d4f; /* Red */
+    margin-top: 1rem;
+  }
+  
+  /* Loan Response Styles */
+  .loan-response {
+    width: 100%;
+    background-color: #e6f7ff; /* Light blue background */
+    border-left: 5px solid #1890ff; /* Blue border */
+    padding: 15px;
+    border-radius: 4px;
+    margin-top: 20px;
+  }
+  
+  /* Loan Status Text */
+  .loan-response p {
+    margin: 5px 0;
+    font-size: 1rem;
+  }
+  
+  /* Strong Text for Emphasis */
+  .loan-response strong {
+    color: #0050b3; /* Darker blue */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .loan-checker-container {
+      padding: 15px;
+      margin: 10px;
+      max-width: 90%;
+    }
+  
+    .loan-checker-container h2 {
+      font-size: 1.5rem;
+    }
+  
+    .loan-checker-container button {
+      font-size: 0.9rem;
+      padding: 10px;
+    }
+  }

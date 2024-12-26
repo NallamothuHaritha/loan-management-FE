@@ -1,0 +1,57 @@
+<div class="loan-checker-container">
+  <h2>Loan Eligibility Checker</h2>
+
+  <!-- Form -->
+  <form [formGroup]="loanForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="customerId">Customer ID:</label>
+      <input id="customerId" type="text" formControlName="customerId" />
+      <div *ngIf="loanForm.get('customerId')?.invalid && loanForm.get('customerId')?.touched">
+        <small>Customer ID is required.</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="creditScore">Credit Score:</label>
+      <input id="creditScore" type="number" formControlName="creditScore" />
+      <div *ngIf="loanForm.get('creditScore')?.invalid && loanForm.get('creditScore')?.touched">
+        <small>Credit score must be between 300 and 850.</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="totalDebt">Total Debt:</label>
+      <input id="totalDebt" type="number" step="0.01" formControlName="totalDebt" />
+      <div *ngIf="loanForm.get('totalDebt')?.invalid && loanForm.get('totalDebt')?.touched">
+        <small>Total debt must be a positive number.</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="employmentStatus">Employment Status:</label>
+      <select id="employmentStatus" formControlName="employmentStatus">
+        <option value="" disabled>-- Select --</option>
+        <option *ngFor="let status of employmentStatuses" [value]="status">{{ status }}</option>
+      </select>
+      <div *ngIf="loanForm.get('employmentStatus')?.invalid && loanForm.get('employmentStatus')?.touched">
+        <small>Employment status is required.</small>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="loanForm.invalid">Check Loan Eligibility</button>
+  </form>
+
+   <!-- Error Message Display -->
+   <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
+   <!-- Loan Response Display -->
+   <div *ngIf="loanResponse" class="loan-response">
+     <p>Loan Status: <strong>{{ loanResponse.isApproved }}</strong></p>
+     <p *ngIf="loanResponse.isApproved === 'Rejected'">
+       Rejection Reason: <strong>{{ loanResponse.responseMessages }}</strong>
+     </p>
+     <p *ngIf="loanResponse.isApproved === 'Approved'">
+       Approval Message: <strong>{{ loanResponse.responseMessages }}</strong>
+     </p>
+   </div>
+</div>
